@@ -4,6 +4,8 @@ upload node files. So i will be working in the backend for this page with node b
 ----------------------------------------------------------------------------------------------------------------------------
 Known issues/changes to make: 
 
+- Pending to fix the google recaptcha service
+
 - Implement redirect 301 system
 
 - Use global variable to hide the key on head html
