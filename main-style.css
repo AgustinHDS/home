@@ -12180,14 +12180,14 @@ textarea {
 }
 
 .disabled {
-  background-color: gray;
+  background-color: #234389; /* this is gray when recaptcha is fixed */
   color: white;
   padding: 9px;
   border: none;
   width: 50%;
   margin-top: 30px;
   border-radius: 20px;
-  pointer-events: none;
+  pointer-events: all; /* this is none when recaptcha is fixed */
 }
 
 .active {
