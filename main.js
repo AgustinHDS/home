@@ -84,12 +84,12 @@ const sliderArrows = (e) => {
 
 const btn = document.getElementById("button");
 
-const recaptchaCallback = () => {
+/* const recaptchaCallback = () => {
   //hacer esto con node (desde el servidor) para evitar la manipulacion desde el frontend inspeccionando la página
   btn.classList.remove("disabled");
   btn.classList.add("active");
   btn.disabled = false;
-};
+}; */
 
 window.recaptchaCallback = recaptchaCallback;
 
