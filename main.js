@@ -89,9 +89,9 @@ const btn = document.getElementById("button");
   btn.classList.remove("disabled");
   btn.classList.add("active");
   btn.disabled = false;
-}; */
+};
 
-window.recaptchaCallback = recaptchaCallback;
+window.recaptchaCallback = recaptchaCallback; */
 
 const warning_email = document.querySelector(".warning-email");
 
