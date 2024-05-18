@@ -125,7 +125,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
   }
 });
 
-const checkFields = () => {
+/* const checkFields = () => {
   const captchaDiv = document.querySelector(".captcha");
   const fields = ["from_name", "email_id", "message"].map((e) =>
     document.getElementById(e)
@@ -139,4 +139,4 @@ const checkFields = () => {
   }
   return fields; //averiguar como funciona este return solo con fields y no con fieldsvalues, por que se tiene que retornar para que funcione? por que tiene quer etornarse fields y no la ultima variable?
 };
-checkFields().forEach((e) => e.addEventListener("input", checkFields));
+checkFields().forEach((e) => e.addEventListener("input", checkFields)); */
