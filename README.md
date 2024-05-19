@@ -6,6 +6,8 @@ upload node files. So i will be working in the backend for this page with node b
 ----------------------------------------------------------------------------------------------------------------------------
 Known issues/changes to make: 
 
+- When the web loads for first time, features section shows top and right buttons, it should onle show one of them acording to the display screen. (this only happen with github pages deploy)
+
 - Pending to fix the google recaptcha service
 
 - Implement redirect 301 system
