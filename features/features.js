@@ -77,7 +77,8 @@ let isWriting;
 
 //desktop and mobile
 document.addEventListener('DOMContentLoaded', ()=> {
-  const makeFeaturesResponsive = ()=> {
+  const makeFeaturesResponsive = async()=> {
+    await waitForFeatures();
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
