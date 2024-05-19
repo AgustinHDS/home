@@ -521,3 +521,8 @@ const setupEventListeners = async () => {
   });
 };
 setupEventListeners();
+
+if (!localStorage.getItem('hasReloaded')) {
+  localStorage.setItem('hasReloaded', 'true');
+  location.reload();
+};
