@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const projects = document.querySelector('.myprojects-carousel');
 
     let aboutInfo = document.querySelector('.info-container').children;
+     if (!aboutElements) {
+     location.reload();
+    };
     const aboutElements = [...aboutInfo];
 
     if (window.innerWidth >= 1024) {
@@ -521,8 +524,3 @@ const setupEventListeners = async () => {
   });
 };
 setupEventListeners();
-
-if (!localStorage.getItem('hasReloaded')) {
-  localStorage.setItem('hasReloaded', 'true');
-  location.reload();
-};
