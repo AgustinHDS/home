@@ -84,9 +84,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const projects = document.querySelector('.myprojects-carousel');
 
     let aboutInfo = document.querySelector('.info-container').children;
-     if (!aboutInfo) {
-     location.reload();
-    };
     const aboutElements = [...aboutInfo];
 
     if (window.innerWidth >= 1024) {
