@@ -87,6 +87,9 @@ const makeFeaturesResponsive = ()=> {
     
     if (window.innerWidth >= 1024) {
       //desktop
+       if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+         location.reload();
+      };
       flexTop.style.display = 'none';
       flexRight.style.display = 'flex';
        
@@ -106,11 +109,8 @@ const makeFeaturesResponsive = ()=> {
       isMobile = false;
     } else {
       //mobile
-       if(!flexTop) { //temporary solution, in production this element is not finded due to async time in this ambient
+       if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      };
-       if(!flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
-          location.reload();
       };
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
