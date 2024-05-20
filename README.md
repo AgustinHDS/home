@@ -8,6 +8,7 @@ Known issues/changes to make:
 
 - There is an issue with the production environment. Some elements like "projects, flexTop, flexRight" in makeFeaturesResponsive() aren't finded due to async time. THis only happens in production environment.
   file: features.js (lines: 97, 113, 116). 
+  This bug was solved with location.reload() until i find a better solution. It seems that the element only aren't finded when the user visits the webpage for the very first time.
 
 - Pending to fix the google recaptcha service
 
