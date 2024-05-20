@@ -95,7 +95,7 @@ const makeFeaturesResponsive = ()=> {
         flexRight.style.display = 'flex';
       }
       if(!projects) {
-         makeFeaturesResponsive();
+         location.reload();
       }
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
