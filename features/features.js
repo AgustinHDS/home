@@ -76,8 +76,7 @@ let isMobile = false;
 let isWriting;
 
 //desktop and mobile
-document.addEventListener('DOMContentLoaded', async()=> {
-await waitForFeatures();
+document.addEventListener('DOMContentLoaded', ()=> {
 const makeFeaturesResponsive = ()=> {
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
@@ -95,7 +94,9 @@ const makeFeaturesResponsive = ()=> {
       if (flexRight) {
         flexRight.style.display = 'flex';
       }
-
+      if(!projects) {
+         makeFeaturesResponsive();
+      }
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
       projects.style.width = 100 + '%';
