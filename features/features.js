@@ -3,7 +3,7 @@ import { getFeatures } from '../main.js';
 
 let ready = false;
 const waitForFeatures = async () => {
-   if (!ready) { // esto esta mal, siempre pasa por el if y cambia de forma obligatoria a true sin importar que la promesa este resuelta. Creo que se resuelve por el poco tiempo que espera para hacer esta accion, hay que encontrar una forma de que cambie a true solo cuando la promesa este resuelta (cambiar la condicion del if y cambiar el estado de ready despues de la linea de await getFEATURES());
+   if (!ready) {
     ready = true
     await getFeatures();
   }
@@ -87,15 +87,15 @@ const makeFeaturesResponsive = ()=> {
     
     if (window.innerWidth >= 1024) {
       //desktop
-       /* if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+      if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      }; */
+      };
       flexTop.style.display = 'none';
       flexRight.style.display = 'flex';
        
-     /*  if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
+      if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      }; */
+      };
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
       projects.style.width = 100 + '%';
@@ -109,9 +109,9 @@ const makeFeaturesResponsive = ()=> {
       isMobile = false;
     } else {
       //mobile
-      /*  if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+      if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      }; */
+      };
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
 
