@@ -6,11 +6,11 @@ upload node files. So i will be working in the backend for this page with node b
 ----------------------------------------------------------------------------------------------------------------------------
 Known issues/changes to make: 
 
-- There is an issue with the production environment. Some elements like "projects, flexTop, flexRight" in makeFeaturesResponsive() aren't finded due to async time. This only happens in production environment.
+- issue with the production environment. Some elements like "projects, flexTop, flexRight" in makeFeaturesResponsive() aren't finded due to async time. This only happens in production environment.
   file: features.js in the makeFeaturesResponsive() function.
   This bug was solved with location.reload() until i find a better solution. It seems that the element only aren't finded when the user visits the webpage for the very first time.
 
-- Pending to fix the google recaptcha service
+- issue with form recaptcha, pending to fix the google recaptcha service
 
 - Implement redirect 301 system
 
@@ -39,4 +39,4 @@ Last changes i made:
 
 ----------------------------------------------------------------------------------------------------------------------------
 Technologies used in this project:
-javascript, sass, a bit of node (only in my local)
+javascript, sass, a bit of node (only in my local environment)
