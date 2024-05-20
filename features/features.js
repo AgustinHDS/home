@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const data = await waitForFeatures();
 
     const { aboutElements } = data.BUTTONS.generateAboutElements();
+    if(!aboutElements) { console.log('no existen los hijos') }
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
