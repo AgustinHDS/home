@@ -94,7 +94,7 @@ const makeFeaturesResponsive = ()=> {
       if (flexRight) {
         flexRight.style.display = 'flex';
       }
-      if(!projects) {
+      if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
       }
       projects.style.top = 0 + 'px';
@@ -110,11 +110,11 @@ const makeFeaturesResponsive = ()=> {
       isMobile = false;
     } else {
       //mobile
-       if(!flexTop) {
+       if(!flexTop) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
       }
-      if(!flexRight) {
-               location.reload();
+       if(!flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+          location.reload();
       }
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
