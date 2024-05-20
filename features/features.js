@@ -34,21 +34,6 @@ const waitForFeatures = async () => {
       LEFT_ARROW: 'left-arrow',
       RIGHT_ARROW: 'right-arrow',
 
-     //about me elements
-
-      generateAboutElements: function() {
-        const leftInfo = document.querySelector('.i-left');
-        const midInfo = document.querySelector('.i-mid');
-        const rightInfo = document.querySelector('.i-right');
-  
-        if (leftInfo && midInfo && rightInfo) {
-          return { aboutElements: [leftInfo, midInfo, rightInfo] };
-        } else {
-          console.error('One or more of the .i-left, .i-mid, or .i-right elements not found');
-          return { aboutElements: [] };
-        }
-      },
-      
       // get all technologies icons and store in different arrays
       iArray: function() {
         let iconsArr = document.querySelector('.container-img').children;
@@ -92,15 +77,14 @@ let isWriting;
 
 //desktop and mobile
 document.addEventListener('DOMContentLoaded', ()=> {
-const makeFeaturesResponsive = async()=> {
-    
-    const data = await waitForFeatures();
-    const { aboutElements } = data.BUTTONS.generateAboutElements();
-
+const makeFeaturesResponsive = ()=> {
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
     const projects = document.querySelector('.myprojects-carousel');
+
+    let aboutInfo = document.querySelector('.info-container').children;
+    const aboutElements = [...aboutInfo];
     
     if (window.innerWidth >= 1024) {
       //desktop
