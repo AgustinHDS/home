@@ -87,16 +87,12 @@ const makeFeaturesResponsive = ()=> {
     
     if (window.innerWidth >= 1024) {
       //desktop
-
-      if (flexTop) {
-        flexTop.style.display = 'none';
-      }
-      if (flexRight) {
-        flexRight.style.display = 'flex';
-      }
+      flexTop.style.display = 'none';
+      flexRight.style.display = 'flex';
+       
       if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      }
+      };
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
       projects.style.width = 100 + '%';
@@ -112,10 +108,10 @@ const makeFeaturesResponsive = ()=> {
       //mobile
        if(!flexTop) { //temporary solution, in production this element is not finded due to async time in this ambient
          location.reload();
-      }
+      };
        if(!flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
           location.reload();
-      }
+      };
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
 
