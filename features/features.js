@@ -110,6 +110,12 @@ const makeFeaturesResponsive = ()=> {
       isMobile = false;
     } else {
       //mobile
+       if(!flexTop) {
+         location.reload();
+      }
+      if(!flexRight) {
+               location.reload();
+      }
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
 
