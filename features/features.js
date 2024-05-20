@@ -38,8 +38,8 @@ const waitForFeatures = async () => {
 
       generateAboutElements: function() {
         let aboutInfo = document.querySelector('.info-container').children;
-        const aboutElements = [...aboutInfo];
-        return { aboutElements };
+        aboutInfo = Array.from(aboutInfo); 
+        return { aboutInfo };
       },
       
       // get all technologies icons and store in different arrays
@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
   const makeFeaturesResponsive = async()=> {
     const data = await waitForFeatures();
 
-    const { aboutElements } = data.BUTTONS.generateAboutElements();
-    if(!aboutElements) { console.log('no existen los hijos') }
+    const { aboutInfo } = data.BUTTONS.generateAboutElements();
+    if(!aboutInfo) { console.log('no existen los hijos') }
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
       projects.style.width = 100 + '%';
       pixelValueLeft = 0;
 
-      aboutElements[0].style.display = 'flex';
-      aboutElements[1].style.display = 'flex';
-      aboutElements[2].style.display = 'flex';
+      aboutInfo[0].style.display = 'flex';
+      aboutInfo[1].style.display = 'flex';
+      aboutInfo[2].style.display = 'flex';
       numberAbout = 0;
 
       isMobile = false;
@@ -154,9 +154,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         projects.style.width = 100 + '%';
       }
 
-      aboutElements[0].style.display = 'none';
-      aboutElements[1].style.display = 'flex';
-      aboutElements[2].style.display = 'none';
+      aboutInfo[0].style.display = 'none';
+      aboutInfo[1].style.display = 'flex';
+      aboutInfo[2].style.display = 'none';
       numberAbout = 0;
     }
   }
