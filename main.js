@@ -4,7 +4,7 @@ let feats = document.querySelector(".dynamic-feats");
 export const getFeatures = () => {
   console.log("Sending request..."); //checking if the promise is only completing once, and not multiple times
 
-  const features = "./features/features.html";
+  const features = "./src/features/features.html";
   return fetch(features)
     .then((response) => {
       if (!response.ok) {
@@ -13,7 +13,15 @@ export const getFeatures = () => {
       return response.text();
     })
     .then((html) => {
-      feats.innerHTML = html;
+      const template = document.createElement('template');
+      template.innerHTML = html;
+
+      const fragment = document.createDocumentFragment();
+      while (template.content.firstChild) {
+        fragment.appendChild(template.content.firstChild);
+      };
+      feats.appendChild(fragment);
+
       console.log("Request fulfilled"); //checking if the promise is only completing once, and not multiple times
     })
     .catch((error) => {
