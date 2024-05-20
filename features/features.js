@@ -37,9 +37,16 @@ const waitForFeatures = async () => {
      //about me elements
 
       generateAboutElements: function() {
-        let aboutInfo = document.querySelector('.info-container').children;
-        aboutInfo = Array.from(aboutInfo); 
-        return { aboutInfo };
+        const leftInfo = document.querySelector('.i-left');
+        const midInfo = document.querySelector('.i-mid');
+        const rightInfo = document.querySelector('.i-right');
+  
+        if (leftInfo && midInfo && rightInfo) {
+          return { aboutElements: [leftInfo, midInfo, rightInfo] };
+        } else {
+          console.error('One or more of the .i-left, .i-mid, or .i-right elements not found');
+          return { aboutElements: [] };
+        }
       },
       
       // get all technologies icons and store in different arrays
@@ -85,19 +92,18 @@ let isWriting;
 
 //desktop and mobile
 document.addEventListener('DOMContentLoaded', ()=> {
-  const makeFeaturesResponsive = async()=> {
+const makeFeaturesResponsive = async()=> {
+    
     const data = await waitForFeatures();
+    const { aboutElements } = data.BUTTONS.generateAboutElements();
 
-    const { aboutInfo } = data.BUTTONS.generateAboutElements();
-    if(!aboutInfo) { console.log('no existen los hijos') }
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
     const projects = document.querySelector('.myprojects-carousel');
-
+    
     if (window.innerWidth >= 1024) {
       //desktop
-
       flexTop.style.display = 'none';
       flexRight.style.display = 'flex';
 
@@ -106,15 +112,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
       projects.style.width = 100 + '%';
       pixelValueLeft = 0;
 
-      aboutInfo[0].style.display = 'flex';
-      aboutInfo[1].style.display = 'flex';
-      aboutInfo[2].style.display = 'flex';
+      aboutElements[0].style.display = 'flex';
+      aboutElements[1].style.display = 'flex';
+      aboutElements[2].style.display = 'flex';
       numberAbout = 0;
 
       isMobile = false;
     } else {
       //mobile
-
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
 
@@ -154,9 +159,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         projects.style.width = 100 + '%';
       }
 
-      aboutInfo[0].style.display = 'none';
-      aboutInfo[1].style.display = 'flex';
-      aboutInfo[2].style.display = 'none';
+      aboutElements[0].style.display = 'none';
+      aboutElements[1].style.display = 'flex';
+      aboutElements[2].style.display = 'none';
       numberAbout = 0;
     }
   }
