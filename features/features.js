@@ -33,6 +33,14 @@ const waitForFeatures = async () => {
       //about me arrows (mobile only)
       LEFT_ARROW: 'left-arrow',
       RIGHT_ARROW: 'right-arrow',
+
+     //about me elements
+
+      generateAboutElements: function() {
+        let aboutInfo = document.querySelector('.info-container').children;
+        const aboutElements = [...aboutInfo];
+        return { aboutElements };
+      },
       
       // get all technologies icons and store in different arrays
       iArray: function() {
@@ -77,7 +85,10 @@ let isWriting;
 
 //desktop and mobile
 document.addEventListener('DOMContentLoaded', ()=> {
-  const makeFeaturesResponsive = ()=> {
+  const makeFeaturesResponsive = async()=> {
+    const data = await waitForFeatures();
+
+    const { aboutElements } = data.BUTTONS.generateAboutElements();
     const flexRight = document.querySelector('.flexbuttons-right');
     const flexTop = document.querySelector('.flexbuttons-top');
 
