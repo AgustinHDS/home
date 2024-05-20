@@ -4,7 +4,7 @@ let feats = document.querySelector(".dynamic-feats");
 export const getFeatures = () => {
   console.log("Sending request..."); //checking if the promise is only completing once, and not multiple times
 
-  const features = "./src/features/features.html";
+  const features = "./features/features.html";
   return fetch(features)
     .then((response) => {
       if (!response.ok) {
