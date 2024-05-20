@@ -125,6 +125,21 @@ document.getElementById("form").addEventListener("submit", function (e) {
   }
 });
 
+document.addEventListener('DOMContentLoaded', ()=> {
+  const checkFirstVisit = () => {
+    const hasVisited = document.cookie.split('; ').find(row => row.startsWith('visited='));
+  
+    if (!hasVisited) {
+      // set cookie to indicate that the user has visited the page for fist time
+      document.cookie = "visited=true; path=/; max-age=" + (60*60*24*365); // expire time 1 year
+  
+      location.reload();
+      
+    }
+  };
+  checkFirstVisit();
+});
+
 /* const checkFields = () => {
   const captchaDiv = document.querySelector(".captcha");
   const fields = ["from_name", "email_id", "message"].map((e) =>
