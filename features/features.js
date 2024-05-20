@@ -83,8 +83,7 @@ const makeFeaturesResponsive = ()=> {
 
     const projects = document.querySelector('.myprojects-carousel');
 
-    let aboutInfo = document.querySelector('.info-container').children;
-    const aboutElements = [...aboutInfo];
+    const aboutElements = [...document.querySelectorAll('.info-container .i-left, .info-container .i-mid, .info-container .i-right')];
     
     if (window.innerWidth >= 1024) {
       //desktop
