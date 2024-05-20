@@ -85,14 +85,16 @@ const makeFeaturesResponsive = ()=> {
 
     let aboutInfo = document.querySelector('.info-container').children;
     const aboutElements = [...aboutInfo];
-    if(!aboutElements) {
-      makeFeaturesResponsive();
-    };
     
     if (window.innerWidth >= 1024) {
       //desktop
-      flexTop.style.display = 'none';
-      flexRight.style.display = 'flex';
+
+      if (flexTop) {
+        flexTop.style.display = 'none';
+      }
+      if (flexRight) {
+        flexRight.style.display = 'flex';
+      }
 
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
