@@ -85,6 +85,9 @@ const makeFeaturesResponsive = ()=> {
 
     let aboutInfo = document.querySelector('.info-container').children;
     const aboutElements = [...aboutInfo];
+    if(!aboutElements) {
+      makeFeaturesResponsive();
+    };
     
     if (window.innerWidth >= 1024) {
       //desktop
