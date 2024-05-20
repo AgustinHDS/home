@@ -6,16 +6,14 @@ export const getFeatures = () => {
 
   const features = "./features/features.html";
   return fetch(features)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.text();
+    })
     .then((html) => {
-      const template = document.createElement('template');
-      template.innerHTML = html;
-
-      const fragment = document.createDocumentFragment();
-      while (template.content.firstChild) {
-        fragment.appendChild(template.content.firstChild);
-      };
-      feats.appendChild(fragment);
-
+      feats.innerHTML = html;
       console.log("Request fulfilled"); //checking if the promise is only completing once, and not multiple times
     })
     .catch((error) => {
