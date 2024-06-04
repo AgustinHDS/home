@@ -10,6 +10,8 @@ Known issues/changes to make:
   file: features.js in the makeFeaturesResponsive() function.
   This bug was solved with location.reload() until i find a better solution. It seems that the element only aren't finded when the user visits the webpage for the very first time.
 
+- Use MatchMedia() to work with the css mediaqueries and resolution in the features.js file
+
 - issue with form recaptcha, pending to fix the google recaptcha service
 
 - Implement redirect 301 system
