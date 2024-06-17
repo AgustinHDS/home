@@ -95,7 +95,6 @@ const makeFeaturesResponsive = ()=> {
       flexRight.style.display = 'flex';
        
       if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
-        if(languageSelect.value === 'es') {
          alert('There was an error, webpage will reload');
          location.reload();
       };
