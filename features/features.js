@@ -87,15 +87,15 @@ const makeFeaturesResponsive = ()=> {
     
     if (window.innerWidth >= 1024) {
       //desktop
-      if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+      /* if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
          alert('There was an error trying to load features, please reload this site');
-      };
+      }; */
       flexTop.style.display = 'none';
       flexRight.style.display = 'flex';
        
-      if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
+      /* if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
          alert('There was an error trying to load features, please reload this site');
-      };
+      }; */
       projects.style.top = 0 + 'px';
       projects.style.left = 0 + 'px';
       projects.style.width = 100 + '%';
@@ -109,9 +109,9 @@ const makeFeaturesResponsive = ()=> {
       isMobile = false;
     } else {
       //mobile
-      if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+      /* if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
          alert('There was an error trying to load features, please reload this site');
-      };
+      }; */
       flexTop.style.display = 'flex';
       flexRight.style.display = 'none';
 
