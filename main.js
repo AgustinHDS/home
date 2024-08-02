@@ -1,6 +1,4 @@
 "use strict";
-import {makeFeaturesResponsive} from './features/features.js';
-
 let feats = document.querySelector(".dynamic-feats");
 
 export const getFeatures = () => {
@@ -126,16 +124,6 @@ document.getElementById("form").addEventListener("submit", function (e) {
       );
   }
 });
-
-//temporary fix for the bug with features (top main bottons showing when they shouldn't)
-(() => {
-    const getFeaturesLS = localStorage.getItem('features');
-    if (!getFeaturesLS) {
-        localStorage.setItem('features', 'loaded');
-        makeFeaturesResponsive();
-    }
-    console.log('features_loaded');
-})();
 
 /* const checkFields = () => {
   const captchaDiv = document.querySelector(".captcha");
