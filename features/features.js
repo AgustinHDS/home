@@ -140,23 +140,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', makeFeaturesResponsive);
     window.addEventListener('resize', makeFeaturesResponsive);
 });
+console.log('test')
 
-  //navbar responsive
+//navbar responsive
 
-  let isCollapsed = false;
-  const mobileNavToggle = document.querySelector('.navbar-toggler');
-  const mobileNavBtns = document.getElementById('navbarNav');
-  
-  mobileNavToggle.addEventListener('click', ()=> {
-    if(isMobile && !isCollapsed) {
-      mobileNavBtns.style.display = 'block';
-      isCollapsed = true;
-    }else {
-      mobileNavBtns.style.display = 'none';
-      isCollapsed = false;
-    }
-  });
+let isCollapsed = false;
+const mobileNavToggle = document.querySelector('.navbar-toggler');
+const mobileNavBtns = document.getElementById('navbarNav');
+
+mobileNavToggle.addEventListener('click', ()=> {
+ if(isMobile && !isCollapsed) {
+   mobileNavBtns.style.display = 'block';
+   isCollapsed = true;
+ }else {
+   mobileNavBtns.style.display = 'none';
+   isCollapsed = false;
+ }
 });
+
 
 //technologies icons
 
