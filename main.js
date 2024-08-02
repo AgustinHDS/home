@@ -125,11 +125,14 @@ document.getElementById("form").addEventListener("submit", function (e) {
   }
 });
 
-(()=> {
+//temporary fix for the bug with features (top main bottons showing when they shouldn't)
+(() => {
     const getFeaturesLS = localStorage.getItem('features');
-    if(!getFeaturesLS) {
+    if (!getFeaturesLS) {
         localStorage.setItem('features', 'loaded');
-        location.reload();
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
     }
     console.log('features is loaded');
 })();
