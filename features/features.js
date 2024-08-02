@@ -76,71 +76,91 @@ let isMobile = false;
 let isWriting;
 
 //desktop and mobile
-export const makeFeaturesResponsive = () => {
-    const flexRight = document.querySelector('.flexbuttons-right');
-    const flexTop = document.querySelector('.flexbuttons-top');
-    const projects = document.querySelector('.myprojects-carousel');
-    const aboutElements = [...document.querySelectorAll('.info-container .i-left, .info-container .i-mid, .info-container .i-right')];
-
-    if (window.innerWidth >= 1024) {
-        flexTop.style.display = 'none';
-        flexRight.style.display = 'flex';
-
-        projects.style.top = 0 + 'px';
-        projects.style.left = 0 + 'px';
-        projects.style.width = 100 + '%';
-        pixelValueLeft = 0;
-
-        aboutElements[0].style.display = 'flex';
-        aboutElements[1].style.display = 'flex';
-        aboutElements[2].style.display = 'flex';
-        numberAbout = 0;
-
-        isMobile = false;
-    } else {
-        flexTop.style.display = 'flex';
-        flexRight.style.display = 'none';
-
-        isMobile = true;
-        if (window.innerWidth >= 768 && window.innerWidth <= 911 && window.innerWidth !== 853) {
+document.addEventListener('DOMContentLoaded', ()=> {
+    const makeFeaturesResponsive = ()=> {
+        const flexRight = document.querySelector('.flexbuttons-right');
+        const flexTop = document.querySelector('.flexbuttons-top');
+    
+        const projects = document.querySelector('.myprojects-carousel');
+    
+        const aboutElements = [...document.querySelectorAll('.info-container .i-left, .info-container .i-mid, .info-container .i-right')];
+        
+        if (window.innerWidth >= 1024) {
+          //desktop
+          /* if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+             alert('There was an error trying to load features, please reload this site');
+          }; */
+          flexTop.style.display = 'none';
+          flexRight.style.display = 'flex';
+           
+          /* if(!projects) { //temporary solution, in production this element is not finded due to async time in this ambient
+             alert('There was an error trying to load features, please reload this site');
+          }; */
+          projects.style.top = 0 + 'px';
+          projects.style.left = 0 + 'px';
+          projects.style.width = 100 + '%';
+          pixelValueLeft = 0;
+    
+          aboutElements[0].style.display = 'flex';
+          aboutElements[1].style.display = 'flex';
+          aboutElements[2].style.display = 'flex';
+          numberAbout = 0;
+    
+          isMobile = false;
+        } else {
+          //mobile
+          /* if(!flexTop || !flexRight) { //temporary solution, in production this element is not finded due to async time in this ambient
+             alert('There was an error trying to load features, please reload this site');
+          }; */
+          flexTop.style.display = 'flex';
+          flexRight.style.display = 'none';
+    
+          isMobile = true;
+          if (window.innerWidth >= 768 && window.innerWidth <= 911 && window.innerWidth !== 853) {
+            //iPad
             pixelValueTop = 0;
             projects.style.top = 0 + 'px';
             projects.style.left = 96 + 'px';
             projects.style.width = 60 + '%';
-        } else if (window.innerWidth <= 540 && window.innerWidth >= 431) {
+          } else if(window.innerWidth <= 540 && window.innerWidth >= 431) {
+            //Surface Duo
             pixelValueTop = 0;
             projects.style.top = 0 + 'px';
             projects.style.left = 0 + 'px';
-            projects.style.width = 95 + '%';
-        } else if (window.innerWidth >= 541 && window.innerWidth <= 767) {
+            projects.style.width = 95  + '%';
+          }
+          else if(window.innerWidth >= 541 && window.innerWidth <= 767) {
+            //responsive general mobile
             pixelValueTop = 0;
             projects.style.top = 0 + 'px';
             projects.style.left = 100 + 'px';
-            projects.style.width = 50 + '%';
-        } else if (window.innerWidth <= 912 && window.innerWidth >= 540) {
+            projects.style.width = 50  + '%';
+          }
+          else if(window.innerWidth <= 912 && window.innerWidth >= 540) {
+            //Asus zenbook Fold
             pixelValueTop = 0;
             projects.style.top = 0 + 'px';
             projects.style.left = 140 + 'px';
-            projects.style.width = 50 + '%';
-        } else if (window.innerWidth <= 430) {
+            projects.style.width = 50  + '%';
+          }
+          else if (window.innerWidth <= 430) {
+            //iPhone SE, iPhone XR, iPhone 12 Pro, iPhone 14 Pro Max, Pixel 7, SG S8+, SG S20 Ultra, G Z Fold 5, SG A51/71
             pixelValueTop = 0;
             projects.style.top = 0 + 'px';
             projects.style.left = 0 + 'px';
             projects.style.width = 100 + '%';
+          }
+    
+          aboutElements[0].style.display = 'none';
+          aboutElements[1].style.display = 'flex';
+          aboutElements[2].style.display = 'none';
+          numberAbout = 0;
         }
-
-        aboutElements[0].style.display = 'none';
-        aboutElements[1].style.display = 'flex';
-        aboutElements[2].style.display = 'none';
-        numberAbout = 0;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('load', makeFeaturesResponsive);
-    window.addEventListener('resize', makeFeaturesResponsive);
+      }
 });
-console.log('test')
+window.addEventListener('load', makeFeaturesResponsive);
+window.addEventListener('resize', makeFeaturesResponsive);
+console.log('features is already loaded')
 
 //navbar responsive
 
