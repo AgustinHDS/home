@@ -125,6 +125,15 @@ document.getElementById("form").addEventListener("submit", function (e) {
   }
 });
 
+(()=> {
+    const getFeaturesLS = localStorage.getItem('features');
+    if(!getFeaturesLS) {
+        localStorage.setItem('features', 'loaded');
+        location.reload();
+    }
+    console.log('features is loaded');
+})();
+
 /* const checkFields = () => {
   const captchaDiv = document.querySelector(".captcha");
   const fields = ["from_name", "email_id", "message"].map((e) =>
