@@ -157,9 +157,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
           numberAbout = 0;
         }
       }
-});
 window.addEventListener('load', makeFeaturesResponsive);
 window.addEventListener('resize', makeFeaturesResponsive);
+});
+
 console.log('features is already loaded')
 
 //navbar responsive
