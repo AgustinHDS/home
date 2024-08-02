@@ -3,10 +3,11 @@ web link: https://agustinhds.github.io/home/
 This is just a webpage that introduces me showing my capabilities. For now it's only a frontend work since github pages doesn't allow me to
 upload node files. So i will be working in the backend for this page with node before the deploy using other host
 
+Be aware that my web may contain errors in production
 ----------------------------------------------------------------------------------------------------------------------------
 Known issues/changes to make: 
 
-- issue with the production environment. Some elements like "projects, flexTop, flexRight" in makeFeaturesResponsive() aren't finded due to async time. This only happens in production environment.
+- issue in the production environment. Some elements like "projects, flexTop, flexRight" in makeFeaturesResponsive() aren't finded due to async time. This only happens in production environment.
   file: features.js in the makeFeaturesResponsive() function.
   This bug was solved with location.reload() until i find a better solution. It seems that the element only aren't finded when the user visits the webpage for the very first time.
 
