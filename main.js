@@ -1,4 +1,6 @@
 "use strict";
+import {makeFeaturesResponsive} from './features/features.js';
+
 let feats = document.querySelector(".dynamic-feats");
 
 export const getFeatures = () => {
@@ -130,11 +132,9 @@ document.getElementById("form").addEventListener("submit", function (e) {
     const getFeaturesLS = localStorage.getItem('features');
     if (!getFeaturesLS) {
         localStorage.setItem('features', 'loaded');
-        setTimeout(() => {
-            location.reload();
-        }, 1000);
+        makeFeaturesResponsive();
     }
-    console.log('features is loaded');
+    console.log('features_loaded');
 })();
 
 /* const checkFields = () => {
